@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "FourSquareTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    FourSquareTableViewController* fs = [[FourSquareTableViewController alloc] init];
+    [fs makeVenueRequest];
     return YES;
 }
 

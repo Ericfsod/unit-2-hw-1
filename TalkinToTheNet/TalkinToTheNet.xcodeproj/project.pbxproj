@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07E8EC3F1BB87F560023B5DB /* FourSquareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8EC3E1BB87F560023B5DB /* FourSquareTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		07E8EC421BB880050023B5DB /* FSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8EC411BB880050023B5DB /* FSViewController.m */; settings = {ASSET_TAGS = (); }; };
+		07E8EC871BBC7A8B0023B5DB /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8EC861BBC7A8B0023B5DB /* Venue.m */; settings = {ASSET_TAGS = (); }; };
+		07E8EC891BBCAECE0023B5DB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E8EC881BBCAECE0023B5DB /* CoreLocation.framework */; };
 		8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4A1BAF859400A92AD2 /* main.m */; };
 		8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7DCD4D1BAF859400A92AD2 /* AppDelegate.m */; };
 		8D7DCD541BAF859400A92AD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7DCD521BAF859400A92AD2 /* Main.storyboard */; };
@@ -22,6 +24,9 @@
 		07E8EC3E1BB87F560023B5DB /* FourSquareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourSquareTableViewController.m; sourceTree = "<group>"; };
 		07E8EC401BB880050023B5DB /* FSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSViewController.h; sourceTree = "<group>"; };
 		07E8EC411BB880050023B5DB /* FSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSViewController.m; sourceTree = "<group>"; };
+		07E8EC851BBC7A8B0023B5DB /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		07E8EC861BBC7A8B0023B5DB /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		07E8EC881BBCAECE0023B5DB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		599843EE4C819CE9BA60C7B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		63EDABA6F352E7581412212A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7DCD461BAF859400A92AD2 /* TalkinToTheNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TalkinToTheNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E8EC891BBCAECE0023B5DB /* CoreLocation.framework in Frameworks */,
 				B7ABCC6EE24482144126B6D7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +65,7 @@
 		8346A3DE1375211DBF14D58E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07E8EC881BBCAECE0023B5DB /* CoreLocation.framework */,
 				63EDABA6F352E7581412212A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -90,6 +97,8 @@
 				8D7DCD521BAF859400A92AD2 /* Main.storyboard */,
 				07E8EC3D1BB87F560023B5DB /* FourSquareTableViewController.h */,
 				07E8EC3E1BB87F560023B5DB /* FourSquareTableViewController.m */,
+				07E8EC851BBC7A8B0023B5DB /* Venue.h */,
+				07E8EC861BBC7A8B0023B5DB /* Venue.m */,
 				07E8EC401BB880050023B5DB /* FSViewController.h */,
 				07E8EC411BB880050023B5DB /* FSViewController.m */,
 				8D7DCD551BAF859400A92AD2 /* Assets.xcassets */,
@@ -216,6 +225,7 @@
 				8D7DCD4E1BAF859400A92AD2 /* AppDelegate.m in Sources */,
 				07E8EC421BB880050023B5DB /* FSViewController.m in Sources */,
 				8D7DCD4B1BAF859400A92AD2 /* main.m in Sources */,
+				07E8EC871BBC7A8B0023B5DB /* Venue.m in Sources */,
 				07E8EC3F1BB87F560023B5DB /* FourSquareTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

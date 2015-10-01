@@ -14,8 +14,7 @@
 
 NSString const *clientID = @"M52XSJPJX2XO4DBE1SFGRDXSHZCAMWEAHL10OTBZM3SYLEFW";
 NSString const *clientSecret = @"QBOBMEZR3WBFOPMKGF5DUNG3UFSLRY2Y045Z5SE0HJ0NRGLY";
-NSString const *latitude = @"40.725236";
-NSString const *longitude =@"-74.002892";
+
 
 @interface FourSquareTableViewController ()
 
@@ -27,6 +26,7 @@ CLLocationManagerDelegate>
 @property (nonatomic) NSMutableArray *dataSource;
 
 
+
 @end
 
 @implementation FourSquareTableViewController
@@ -34,31 +34,38 @@ CLLocationManagerDelegate>
 
 -(void)makeVenueRequest {
 	
-	NSURL *url = [NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3"];
+	//NSURL *url = [NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3"];
 	
 	// Convenience constructor
-	NSURLRequest *URLRequest = [NSURLRequest requestWithURL:url];
+	//NSURLRequest *URLRequest = [NSURLRequest requestWithURL:url];
 	
 	// Instance
 	// NSURLRequest *test = [[NSURLRequest alloc] initWithURL:url];
 	
 	AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
-	[manager GET:@"https://api.foursquare.com/v2/venues/search?client_id=M52XSJPJX2XO4DBE1SFGRDXSHZCAMWEAHL10OTBZM3SYLEFW&client_secret=QBOBMEZR3WBFOPMKGF5DUNG3UFSLRY2Y045Z5SE0HJ0NRGLY&v=20130815&ll=40.7,-74&query=sushi" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+	[manager GET:@"https://api.foursquare.com/v2/venues/search?client_id=M52XSJPJX2XO4DBE1SFGRDXSHZCAMWEAHL10OTBZM3SYLEFW&client_secret=QBOBMEZR3WBFOPMKGF5DUNG3UFSLRY2Y045Z5SE0HJ0NRGLY&v=20130815&ll=40.7,-74&query=icecream" parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
 		// this code gets called when the request is successful
 		NSLog(@"Success %@", responseObject);
+		//responseObject is the json results
 		
 		NSDictionary *responseDictionary = [responseObject valueForKey:@"response"];
 		NSLog(@"response %@", responseDictionary);
+		//responseDictionary is printing out the dictionary for string "response" in json results
 		
 		NSArray *venues = [responseDictionary valueForKey:@"venues"];
 		NSLog(@"%@", venues);
+		//printing out the venues dictionary in json results and storing it in array
+	
 		
 		for (int i = 0; i < venues.count - 1; i++) {
 			NSDictionary *venueDictionary = [venues objectAtIndex:i];
 			Venue *venue = [[Venue alloc] init];
 			venue.name = [venueDictionary valueForKey:@"name"];
+			venue.location = [venueDictionary valueForKey:@"location"];
+			//looping through venue dictionary and adding venue to datasource
 			
 			[self.dataSource addObject:venue];
+			//here's where venue is added to datasource.
 		}
 		
 		[self.tableView reloadData];
@@ -75,6 +82,7 @@ CLLocationManagerDelegate>
 	
 	self.dataSource = [[NSMutableArray alloc] init];
 	[self makeVenueRequest];
+	//initializing datasource in memory
 }
 
 
@@ -90,6 +98,11 @@ CLLocationManagerDelegate>
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return nil;
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellIdentifier" forIndexPath:indexPath];
+	Venue *venue = [self.dataSource objectAtIndex:indexPath.row];
+	cell.textLabel.text = venue.name;
+	//grabbing venues from the datasource and getting the name to print in cell. Awesome.
+	
+	return cell;
 }
 @end

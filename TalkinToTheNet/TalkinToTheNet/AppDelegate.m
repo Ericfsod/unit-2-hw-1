@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FourSquareTableViewController.h"
+#import <GoogleMaps/GoogleMaps.h>
 @interface AppDelegate ()
 
 @end
@@ -19,6 +20,8 @@
     // Override point for customization after application launch.
     FourSquareTableViewController* fs = [[FourSquareTableViewController alloc] init];
     [fs makeVenueRequest];
+	//Google Maps and Places API Key
+	[GMSServices provideAPIKey:@"AIzaSyAK8P2-Tqo0vgUnNCoyMfWJzVLzlvsYH2U"];
     return YES;
 }
 

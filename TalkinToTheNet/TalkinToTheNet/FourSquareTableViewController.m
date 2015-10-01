@@ -11,6 +11,8 @@
 #import "AFNetworking.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Venue.h"
+@import GoogleMaps;
+
 
 NSString const *clientID = @"M52XSJPJX2XO4DBE1SFGRDXSHZCAMWEAHL10OTBZM3SYLEFW";
 NSString const *clientSecret = @"QBOBMEZR3WBFOPMKGF5DUNG3UFSLRY2Y045Z5SE0HJ0NRGLY";

@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -58,18 +57,7 @@
                     <view key="view" contentMode="scaleToFill" id="V5F-4O-HxT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0pe-Nj-zEn">
-                                <rect key="frame" x="20" y="64" width="560" height="536"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="0pe-Nj-zEn" secondAttribute="trailing" id="2P1-Mb-GRD"/>
-                            <constraint firstItem="400-em-MH6" firstAttribute="top" secondItem="0pe-Nj-zEn" secondAttribute="bottom" id="2og-YB-DI9"/>
-                            <constraint firstItem="0pe-Nj-zEn" firstAttribute="leading" secondItem="V5F-4O-HxT" secondAttribute="leadingMargin" id="Geh-qr-znG"/>
-                            <constraint firstItem="0pe-Nj-zEn" firstAttribute="top" secondItem="Db3-M1-Qct" secondAttribute="bottom" id="W7Z-y6-P5y"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLU-RM-oy5" userLabel="First Responder" sceneMemberID="firstResponder"/>

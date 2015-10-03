@@ -9,6 +9,7 @@
 #import "FSViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import "FourSquareTableViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface FSViewController ()
 

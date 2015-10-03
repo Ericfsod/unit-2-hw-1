@@ -14,5 +14,7 @@
 @property (nonatomic) NSString * address;
 @property (nonatomic) NSString * location;
 @property (nonatomic) NSString * checkIns;
+@property (nonatomic) NSString *latitude;
+@property (nonatomic) NSString	*longitude;
 
 @end

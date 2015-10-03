@@ -14,8 +14,7 @@
 @import GoogleMaps;
 
 
-NSString const *clientID = @"M52XSJPJX2XO4DBE1SFGRDXSHZCAMWEAHL10OTBZM3SYLEFW";
-NSString const *clientSecret = @"QBOBMEZR3WBFOPMKGF5DUNG3UFSLRY2Y045Z5SE0HJ0NRGLY";
+
 
 
 @interface FourSquareTableViewController ()
@@ -63,7 +62,9 @@ CLLocationManagerDelegate>
 			NSDictionary *venueDictionary = [venues objectAtIndex:i];
 			Venue *venue = [[Venue alloc] init];
 			venue.name = [venueDictionary valueForKey:@"name"];
-			venue.location = [venueDictionary valueForKey:@"location"];
+			venue.latitude = [venueDictionary valueForKey:@"lat"];
+			venue.longitude = [venueDictionary valueForKey:@"lng"];
+			
 			//looping through venue dictionary and adding venue to datasource
 			
 			[self.dataSource addObject:venue];
@@ -107,4 +108,10 @@ CLLocationManagerDelegate>
 	
 	return cell;
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+	
+	
+	}
+
 @end
